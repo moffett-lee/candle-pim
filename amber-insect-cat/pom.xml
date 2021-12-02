@@ -10,6 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>amber-insect-cat-gateway</module>
+        <module>amber-insect-cat-account</module>
+        <module>amber-insect-cat-stock</module>
+        <module>amber-insect-cat-order</module>
     </modules>
 
     <!-- 自定义属性， 统一管理版本 -->
