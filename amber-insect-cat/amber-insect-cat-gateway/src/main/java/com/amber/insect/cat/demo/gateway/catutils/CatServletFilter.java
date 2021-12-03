@@ -1,15 +1,13 @@
-package com.amber.insect.cat.demo.gateway.utils;
+package com.amber.insect.cat.demo.gateway.catutils;
 
 import com.alidaodao.app.Cat;
 import com.alidaodao.app.CatConstants;
 import com.alidaodao.app.message.Message;
 import com.alidaodao.app.message.Transaction;
 
-import java.io.IOException;
-
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
-
+import java.io.IOException;
 
 /**
  * <p>Description: </p>

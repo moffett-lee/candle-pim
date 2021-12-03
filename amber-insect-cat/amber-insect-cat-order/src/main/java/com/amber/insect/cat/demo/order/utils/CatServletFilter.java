@@ -1,4 +1,4 @@
-package com.amber.insect.cat.demo.gateway.utils;
+package com.amber.insect.cat.demo.order.utils;
 
 import com.alidaodao.app.Cat;
 import com.alidaodao.app.CatConstants;

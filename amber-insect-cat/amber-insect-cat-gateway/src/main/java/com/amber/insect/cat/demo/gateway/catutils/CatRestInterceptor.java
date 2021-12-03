@@ -1,7 +1,4 @@
-package com.amber.insect.cat.demo.gateway.utils;
-
-import java.io.IOException;
-
+package com.amber.insect.cat.demo.gateway.catutils;
 import com.alidaodao.app.Cat;
 import com.alidaodao.app.CatConstants;
 import com.alidaodao.app.message.Transaction;
@@ -11,6 +8,8 @@ import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
 
 /**
  * <p>Description: </p>

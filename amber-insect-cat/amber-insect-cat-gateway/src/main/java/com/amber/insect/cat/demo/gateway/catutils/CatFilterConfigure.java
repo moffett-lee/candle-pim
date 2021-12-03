@@ -1,15 +1,16 @@
-package com.amber.insect.cat.demo.gateway.utils;
+package com.amber.insect.cat.demo.gateway.catutils;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Author amber.liyuze
- * @Description 
- * @Date 2021/12/2 23:44
- * @Param  * @param null
- * @Return 
+ * <p>Description: </p>
+ * @date  
+ * @author   
+ * @version 1.0
+ * @name   
+ * <p>Copyright:Copyright(c)2020</p>
  */
 @Configuration
 public class CatFilterConfigure {

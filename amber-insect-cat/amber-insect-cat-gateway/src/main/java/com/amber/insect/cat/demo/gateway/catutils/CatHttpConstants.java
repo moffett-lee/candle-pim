@@ -1,4 +1,4 @@
-package com.amber.insect.cat.demo.gateway.utils;
+package com.amber.insect.cat.demo.gateway.catutils;
 /**
  * <p>Description: </p>
  * @date  

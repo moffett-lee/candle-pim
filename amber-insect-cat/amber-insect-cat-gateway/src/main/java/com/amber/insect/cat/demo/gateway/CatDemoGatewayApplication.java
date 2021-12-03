@@ -3,7 +3,7 @@ package com.amber.insect.cat.demo.gateway;
 import com.alidaodao.app.Cat;
 import com.alidaodao.app.CatConstants;
 import com.alidaodao.app.message.Transaction;
-import com.amber.insect.cat.demo.gateway.utils.CatRestInterceptor;
+import com.amber.insect.cat.demo.gateway.catutils.CatRestInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;

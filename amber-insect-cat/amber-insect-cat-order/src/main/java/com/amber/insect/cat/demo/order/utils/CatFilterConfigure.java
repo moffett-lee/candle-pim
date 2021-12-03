@@ -1,4 +1,4 @@
-package com.amber.insect.cat.demo.gateway.utils;
+package com.amber.insect.cat.demo.order.utils;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

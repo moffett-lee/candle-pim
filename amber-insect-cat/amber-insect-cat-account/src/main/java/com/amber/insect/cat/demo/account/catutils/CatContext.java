@@ -1,16 +1,18 @@
-package com.amber.insect.cat.demo.gateway.utils;
+package com.amber.insect.cat.demo.account.catutils;
+
+import com.alidaodao.app.Cat;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.alidaodao.app.Cat;
 
 /**
- * @Author amber.liyuze
- * @Description cat上下文
- * @Date 2021/12/2 23:44
- * @Param  * @param null
- * @Return
+ * <p>Description: </p>
+ * @date  
+ * @author   
+ * @version 1.0
+ * @name   
+ * <p>Copyright:Copyright(c)2020</p>
  */
 public class CatContext implements Cat.Context {
     /**

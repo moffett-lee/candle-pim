@@ -1,4 +1,4 @@
-package com.amber.insect.cat.demo.gateway.utils;
+package com.amber.insect.cat.demo.account.catutils;
 
 import com.alidaodao.app.Cat;
 import com.alidaodao.app.CatConstants;
@@ -9,7 +9,6 @@ import java.io.IOException;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
-
 
 /**
  * <p>Description: </p>
