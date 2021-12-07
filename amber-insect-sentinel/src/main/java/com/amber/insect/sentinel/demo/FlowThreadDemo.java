@@ -15,6 +15,11 @@ import java.util.List;
  * @Version 1.0
  **/
 public class FlowThreadDemo {
+
+
+    public static void main(String[] args) {
+
+    }
     private static void initFlowRule() {
         List<FlowRule> rules = new ArrayList<FlowRule>();
         FlowRule rule1 = new FlowRule();
