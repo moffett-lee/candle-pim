@@ -18,6 +18,9 @@ import static sun.security.x509.CertificateX509Key.KEY;
  **/
 public class FlowQpsDemo {
 
+    public static void main(String[] args) {
+
+    }
 
 
     private static void initFlowQpsRule() {

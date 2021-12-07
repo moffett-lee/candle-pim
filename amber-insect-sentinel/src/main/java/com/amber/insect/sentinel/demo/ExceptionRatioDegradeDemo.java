@@ -18,7 +18,9 @@ import static sun.security.x509.X509CertInfo.KEY;
  **/
 public class ExceptionRatioDegradeDemo {
 
+    public static void main(String[] args) {
 
+    }
 
 
     private static void initDegradeRule() {
