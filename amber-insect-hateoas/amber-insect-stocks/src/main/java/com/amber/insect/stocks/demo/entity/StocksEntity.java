@@ -1,7 +1,6 @@
-package com.amber.insect.hateoas.order.entity;
+package com.amber.insect.stocks.demo.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,19 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * @ClassName StocksEntity
- * @Description TODO
- * @Author Amber.L
- * @Date 2021/12/8 22:02
- * @Version 1.0
- **/
+ * @Author amber.liyuze
+ * @Description
+ * @Date 2021/12/9 20:59
+ */
 @Entity
 @Data
 @Table(name = "T_STOCKS")
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class StocksEntity extends BaseEntity{
+public class StocksEntity extends BaseEntity {
 
     /**
      * 股票名称
@@ -32,4 +28,5 @@ public class StocksEntity extends BaseEntity{
      * 股票价格
      */
     private Double price;
+
 }

@@ -1,6 +1,7 @@
 package com.amber.insect.hateoas.order.entity;
 
 import lombok.AllArgsConstructor;
+
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OrderEntity {
+public class OrderEntity  extends BaseEntity {
 
     /**
      * 用户名

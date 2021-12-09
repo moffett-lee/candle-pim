@@ -1,12 +1,14 @@
-package com.amber.insect.hateoas.order.entity;
+package com.amber.insect.stocks.demo.entity;
 
-import lombok.Data;
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Date;
+import lombok.Data;
 
 /**
  * @ClassName BaseEntity
@@ -18,7 +20,6 @@ import java.util.Date;
 @MappedSuperclass
 @Data
 public class BaseEntity implements Serializable {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

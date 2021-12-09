@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>amber-insect-hateoas-order</module>
+        <module>amber-insect-stocks</module>
     </modules>
 
     <!-- 自定义属性， 统一管理版本 -->
@@ -17,7 +18,7 @@
         <spring-cloud-alibaba-dependencies.version>2021.1</spring-cloud-alibaba-dependencies.version>
         <spring-cloud-dependencies.version>2020.0.3</spring-cloud-dependencies.version>
         <spring-cloud-gateway.version>2.1.2.RELEASE</spring-cloud-gateway.version>
-        <spring-boot-dependencies.version>2.5.4</spring-boot-dependencies.version>
+        <spring-boot-dependencies.version>2.1.6.RELEASE</spring-boot-dependencies.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
@@ -64,7 +65,13 @@
     </dependencyManagement>
 
 
+
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!-- spring boot 依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
