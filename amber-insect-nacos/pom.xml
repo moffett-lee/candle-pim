@@ -11,6 +11,7 @@
     <modules>
         <module>amber-insect-nacos-client</module>
         <module>amber-insect-nacos-server</module>
+        <module>amber-insect-nacos-config</module>
     </modules>
 
 
@@ -76,6 +77,8 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
+
     </dependencies>
     <build>
         <finalName>${project.name}</finalName>
