@@ -1,0 +1,49 @@
+#---------------------------------------------- eureka node1 注册中心配置 ----------------------------------------------------
+server:
+  port: 18761
+
+spring:
+  application:
+    name: rainze-eureka # 应用名称
+  profiles: node1 # 【eureka服务器集群 —— 节点1】，用于main方法启动的时候，用户需要输入的内容。标识启动的是哪一个eureka服务器；
+  #开启登录认证  注意 有时候这里开启会出现服务注册不上问题  本项目已解决详细见配置中心
+  # security:
+  #   basic:
+  #     enabled: true
+  #   user:
+  #     name: admin
+  #     password: admin
+eureka:
+  instance:
+    hostname: server.eureka.node1.com # 服务所在主机（一般都是配置域名）；本地测试的话，需要在 host 文件中指定虚拟域名
+  client:
+    service-url:
+      defaultZone: http://server.eureka.node2.com:28761/eureka # eureka服务器的地址
+    fetch-registry: false # 获取注册列表
+    register-with-eureka: true # 是否将自己也注册到其他eureka节点上。一般设置为true或者默认即可，这样才会在eureka控制台上看到所有的eureka集群列表信息
+
+
+
+# 注意下面是三个横杠：在单一文件中，可用连续三个连字号（---）区分多个文件（节省多个yml文件的配置，在一个yml文件中就可配置）。
+# 我是为了方便省事这样写  一般在企业项目当中搭建集群要多文件分开  和多环境配置。
+---
+
+#---------------------------------------------- eureka node2 注册中心配置 ----------------------------------------------------
+server:
+  port: 28761
+
+spring:
+  application:
+    name: sea-server-eureka # 应用名称
+  profiles: node2 # 【eureka服务器集群 —— 节点2】 用于main方法启动的时候，用户需要输入的内容。标识启动的是哪一个eureka服务器；
+
+eureka:
+  instance:
+    hostname: server.eureka.node2.com # 服务所在主机（一般都是配置域名；本地测试的话，需要在 host 文件中指定虚拟域名
+  client:
+    service-url:
+      defaultZone: http://server.eureka.node1.com:18761/eureka # eureka服务器的地址
+    fetch-registry: false # 获取注册列表
+    register-with-eureka: true # 是否将自己也注册到其他eureka节点上。一般设置为true或者默认即可，这样才会在eureka控制台上看到所有的eureka集群列表信息
+
+

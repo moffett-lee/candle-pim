@@ -1,0 +1,26 @@
+
+spring:
+  application:
+    name: rainze-zipkin #服务名称
+
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: rainze-config
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-interval: 10000
+        multiplier: 2
+        max-attempts: 10
+  profiles:
+    active: dev
+
+eureka:
+  instance:
+    hostname: localhost # 服务提供者应用所在的主机（本地测试的话，使用localhost或者127.0.0.1即可，或者在host文件中指定一个虚拟域名也可以）
+    lease-renewal-interval-in-seconds: 5 # 心跳时间，表示eureka client发送心跳给eureka server端的频率（缺省为30s）
+  client:
+    service-url:
+      defaultZone: http://server.eureka.node1.com:18761/eureka,http://server.eureka.node2.com:28761/eureka # 指定eureka服务器集群列表地址

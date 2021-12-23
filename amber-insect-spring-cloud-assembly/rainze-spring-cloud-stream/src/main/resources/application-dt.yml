@@ -1,0 +1,38 @@
+
+spring:
+  application:
+    name: rainze-stream
+  cloud:
+    stream:
+      stream:
+        kafka:
+          binder:
+            brokers: ${dtns.micro.stream.kafka.binder.brokers}
+            zk-nodes: ${dtns.micro.stream.kafka.binder.zk-nodes}
+            auto-add-partitions: true
+            auto-create-topics: true
+            min-partition-count: 1
+
+
+
+#  bindings:
+#      input:  #消息接收
+#        destination: dtns-demo  # 指定了消息获取的目的地
+#
+#      output: #消息发送
+#        destination: dtns-demo
+#        contentType: text/plain
+
+
+server:
+  port: 8765
+
+eureka:
+  instance:
+    hostname: localhost # 服务提供者应用所在的主机（本地测试的话，使用localhost或者127.0.0.1即可，或者在host文件中指定一个虚拟域名也可以）
+    lease-renewal-interval-in-seconds: 5 # 心跳时间，表示eureka client发送心跳给eureka server端的频率（缺省为30s）
+  client:
+    service-url:
+      defaultZone: http://server.eureka.node1.com:18761/eureka,http://server.eureka.node2.com:28761/eureka # 指定eureka服务器集群列表地址
+
+
