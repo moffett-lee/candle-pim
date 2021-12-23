@@ -1,5 +1,5 @@
 ### 简介
-PIM-MavenSSM 即Spring+SpringMVC+MyBatis 集成管理JavaSSM maven项目，也是本平台的核心框架组成，搭建本平台主要做学习研究之用，期望打造成一个通用的IT能力开放平台。
+amber-insect-maven-ssm 即Spring+SpringMVC+MyBatis 集成管理JavaSSM maven项目，也是本平台的核心框架组成，搭建本平台主要做学习研究之用，期望打造成一个通用的IT能力开放平台。
 
 ### 功能说明
 - 数据库：Druid数据库连接池；
@@ -24,5 +24,4 @@ PIM-MavenSSM 即Spring+SpringMVC+MyBatis 集成管理JavaSSM maven项目，也�
 - 系统首页：http://localhost:8037/admin/index.jsp，初始登录名密码（admin/111）；
 - 本系统使用maven进行构建，web服务器默认使用maven plugin tomcat，详情请查看pom.xml文件；
 
-更多功能持续更新中。。。
-### 联系我
+

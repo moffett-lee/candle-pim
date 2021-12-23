@@ -1,4 +1,4 @@
-## PIM-MavenSSMEasyUI
+## amber-insect-maven-ssm-easyUI
 
 ##### 项目简介
 

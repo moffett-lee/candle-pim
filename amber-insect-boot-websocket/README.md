@@ -1,4 +1,4 @@
-### rainze-springboot-websocket
+### amber-insect-boot-websocket
 
 websocket的学习以及基于springBot整合websocket搭建的简单的在线聊天系统。
 

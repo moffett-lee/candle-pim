@@ -8,11 +8,6 @@ amber-insect-config-file 集成管理所有Java项目的配置文件，便于以
 - 所有项目得配置文件，按项目技术领域分：前端配置、模板配置等。
 
 ## 项目模块
-- PIM-ConfigurationFile :所有的配置文件都在此项目中管理。
-- PIM-JavaWeb :javaWeb项目。
-- PIM-MavenSSM :maven版SSM项目。
-- PIM-SpringBoot :SpringBoot项目。
-- PIM-ThirdAPI :所有第三方API调用demo项目。
 
 ## 项目配置说明
 - 数据库配置
@@ -24,7 +19,3 @@ amber-insect-config-file 集成管理所有Java项目的配置文件，便于以
    username:
    password:
     
-## 未来要集成的
-- 微服务项目    
-- 工具类项目    
-- 测试Demo项目    
