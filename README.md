@@ -12,28 +12,27 @@ candle 蜡烛,中文谐译音(可以的了) 寓意为只要肯努力学习，什
  
   为什么叫昆虫？之前看过《昆虫记》一书，觉得昆虫特别有趣，特别喜欢昆虫里面的甲虫。当然昆虫也是世界上数量最多、种类最多、形态最多的节肢动物，已发现100多万种，它们的踪迹几乎遍布世界的每一个角落。
 
-* 蚊子《amber-insect-cat》
-* 蚂蚁《amber-insect-ceph》
-* 蝗虫《amber-insect-hateoas》
-* 草蜢《amber-insect-jvm》
-* 苍蝇《amber-insect-nacos》
-* 蜉蝣《amber-insect-sentinel》
-* 蜻蜓《amber-insect-boot-websocket》
-* 豆娘《amber-insect-concurrent-programming》
+* 蚊子《springboot-cat》
+* 蚂蚁《springboot-ceph》
+* 蝗虫《springboot-hateoas》
+* 草蜢《java-jvm》
+* 苍蝇《springboot-nacos》
+* 蜉蝣《springboot-sentinel》
+* 蜻蜓《springboot-websocket》
+* 豆娘《concurrent-program》
 * 石蝇《amber-insect-config-file》
-* 蜚蠊《amber-insect-design-patterns》
 * 螳螂《amber-insect-java-web》
-* 螽斯《amber-insect-maven-ssm》
-* 蟋蟀《amber-insect-maven-ssm-admin》
-* 蝗虫《amber-insect-maven-ssm-easyUI》
-* 蝼蛄《amber-insect-shiro》
+* 螽斯《java-maven-ssm》
+* 蟋蟀《java-maven-ssm-admin》
+* 蝗虫《java-maven-ssm-easyUI》
+* 蝼蛄《springboot-shiro》
 * 竹节虫《amber-insect-spring-boot》
-* 白蚁《amber-insect-spring-boot-source》
-* 足丝蚁《amber-insect-spring-cloud-assembly》
-* 蠼螋《amber-insect-task》
-* 啮虫《amber-insect-third-api》
-* 羽虱《amber-insect-utils》
-* 血虱
+* 白蚁《spring-boot-source》
+* 足丝蚁《spring-cloud-assembly》
+* 蠼螋《springboot-task》
+* 啮虫《springboot-third-api》
+* 羽虱《java-utils》
+* 血虱《springboot-docker》
 * 蓟马
 * 蝉
 * 角蝉
