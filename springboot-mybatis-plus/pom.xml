@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.liyuze</groupId>
-	<artifactId>pim</artifactId>
+	<artifactId>springboot-mybatis-plus</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PIM-SpringBoot</name>
 	<description>spring Boot项目管理。</description>

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.liyuze</groupId>
-	<artifactId>PIM-ThirdAPI</artifactId>
+	<artifactId>springboot-third-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PIM-ThirdAPI</name>
 	<description>第三方接口文档演示。</description>

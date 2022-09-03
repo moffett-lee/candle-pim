@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.rainze</groupId>
-    <artifactId>rainze-shiro</artifactId>
+    <artifactId>springboot-shiro</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>rainze-shiro</name>
     <description>Demo project for Spring Boot</description>

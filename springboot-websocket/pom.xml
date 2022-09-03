@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.rainze</groupId>
-    <artifactId>rainze-springboot-websocket</artifactId>
+    <artifactId>springboot-websocket</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>rainze-springboot-websocket</name>
     <description>Demo project for Spring Boot</description>

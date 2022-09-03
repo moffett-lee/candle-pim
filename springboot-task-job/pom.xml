@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>com.rainze</groupId>
-    <artifactId>rainze-timed-task-framework</artifactId>
+    <artifactId>springboot-task-job</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>rainze-timed-task-framework</name>
     <packaging>pom</packaging>
