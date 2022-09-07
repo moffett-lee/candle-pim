@@ -1,0 +1,16 @@
+logging:
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  level:
+    cn.itcast: debug
+spring:
+  rabbitmq:
+    host: 192.168.106.129 # rabbitMQ的ip地址
+    port: 5672 # 端口
+    username: guest
+    password: guest
+    virtual-host: /
+#    publisher-confirm-type: correlated
+#    publisher-returns: true
+#    template:
+#      mandatory: true
