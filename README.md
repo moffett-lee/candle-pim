@@ -33,7 +33,7 @@ candle 蜡烛,中文谐译音(可以的了) 寓意为只要肯努力学习，什
 * 啮虫《springboot-third-api》
 * 羽虱《java-utils》
 * 血虱《springboot-docker》
-* 蓟马
+* 蓟马《springcloud-sentinel》
 * 蝉
 * 角蝉
 * 沫蝉
