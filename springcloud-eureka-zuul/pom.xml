@@ -6,6 +6,7 @@
     <artifactId>springcloud-eureka-zuul</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springcloud-eureka-zuul</name>
+    <packaging>pom</packaging>
     <!-- 项目介绍 -->
     <url>www.liyuze.work</url>
     <description>springCloud常用组件学习，支持集群部署。</description>
