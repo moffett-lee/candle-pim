@@ -66,7 +66,7 @@ public class FileInfoServiceImpl implements FileInfoService {
 
 	@Override
 	public FileInfo findOne(Long id) {
-		Assert.notNull(id, "param id can not be null.");
+		//Assert.notNull(id, "param id can not be null.");
 		return fileInfoMapper.selectByPrimaryKey(id);
 	}
 
@@ -77,7 +77,7 @@ public class FileInfoServiceImpl implements FileInfoService {
 
 	@Override
 	public int deleteOne(Long id) {
-		Assert.notNull(id, "param id can not be null.");
+		//Assert.notNull(id, "param id can not be null.");
 		return fileInfoMapper.deleteByPrimaryKey(id);
 	}
 

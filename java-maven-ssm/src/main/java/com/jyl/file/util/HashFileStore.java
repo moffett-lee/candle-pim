@@ -146,7 +146,7 @@ public class HashFileStore implements FileStore, InitializingBean {
 	 * Spring 环境中 baseDirectory必须设置
 	 */
 	public void afterPropertiesSet() throws Exception {
-		Assert.notNull(this.baseDirectory, "baseDirectory can't be null");
+		//Assert.notNull(this.baseDirectory, "baseDirectory can't be null");
 	}
 
 	/**

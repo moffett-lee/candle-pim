@@ -9,7 +9,7 @@
 <body>
 	<div align="right"><a href="/logout.action">logout</a></div>
 	<hr>
-	<div>Hello world!</div>
+	<div>Hello worldZ次方!</div>
 	<hr>
 </body>
 </html>

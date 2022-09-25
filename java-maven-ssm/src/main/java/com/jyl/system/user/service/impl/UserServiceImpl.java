@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void insertOne(User user) {
 		
-		Assert.notNull(user, "param user cannot be null");
+		//Assert.notNull(user, "param user cannot be null");
 		
 		if(!StringUtils.hasText(user.getUsername())){
 			log.error("param username cannot be null or empty.");
@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void editOne(User user) {
 		
-		Assert.notNull(user, "param userId cannot be null");
+		//Assert.notNull(user, "param userId cannot be null");
 		userMapper.updateByPrimaryKeySelective(user);
 	}
 

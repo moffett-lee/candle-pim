@@ -94,7 +94,7 @@ public class FileManagerImpl implements FileManager,InitializingBean {
 	}
 	
 	public void afterPropertiesSet() throws Exception {
-		Assert.notNull(this.store,"store can't be null");
+		//Assert.notNull(this.store,"store can't be null");
 		
 	}
 

@@ -7,7 +7,7 @@
   	<version>1.0</version>
   	<packaging>war</packaging>
 
-  	<name>PIM-MavenSSM</name>
+  	<name>java-maven-ssm</name>
   	<url>http://maven.apache.org</url>
 
   	<properties>
@@ -88,7 +88,7 @@
         <dependency>  
             <groupId>com.alibaba</groupId>  
             <artifactId>druid</artifactId>  
-            <version>1.0.12</version>  
+            <version>1.2.11</version>
         </dependency>
         
         <dependency>
@@ -169,8 +169,13 @@
 		    <artifactId>javamelody-core</artifactId>
 		    <version>1.67.0</version>
 		</dependency>
-		
-  	</dependencies>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-annotations-api</artifactId>
+            <version>9.0.65</version>
+        </dependency>
+
+    </dependencies>
   	
   	<build>
 	    <finalName>ssm</finalName>

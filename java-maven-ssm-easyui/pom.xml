@@ -5,7 +5,7 @@
     <artifactId>java-maven-ssm-easyui</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>PIM-MavenSSMEasyUI</name>
+    <name>java-maven-ssm-easyui</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -195,7 +195,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.0.24</version>
+            <version>1.2.11</version>
         </dependency>
         <!-- End: druid -->
 

@@ -33,6 +33,7 @@ public class UserController {
     public Result login(@RequestBody User user) {
         try {
             String MD5pwd = MD5Util.MD5Encode(user.getPassword(), "UTF-8");
+            System.out.println(MD5pwd);
             user.setPassword(MD5pwd);
         } catch (Exception e) {
             user.setPassword("");

@@ -1,5 +1,11 @@
 ### 简介
-amber-insect-maven-ssm 即Spring+SpringMVC+MyBatis 集成管理JavaSSM maven项目，也是本平台的核心框架组成，搭建本平台主要做学习研究之用，期望打造成一个通用的IT能力开放平台。
+java-maven-ssm 即Spring+SpringMVC+MyBatis+maven 集成管理JavaSSM maven项目，也是本平台的核心框架组成，搭建本平台主要做学习研究之用，期望打造成一个通用的IT能力开放平台。
+
+
+### 架构
+
+SSM + maven + xml配置方式 + jsp + html 一套传统的ssm整合后台管理系统。
+
 
 ### 功能说明
 - 数据库：Druid数据库连接池；
@@ -15,13 +21,12 @@ amber-insect-maven-ssm 即Spring+SpringMVC+MyBatis 集成管理JavaSSM maven项�
 - 项目构建：maven构建项目，mybatis generator生成mybatis映射文件和Model；
 - 工具类：常用日期时间处理、通用异常处理机制、Jackson进行json数据处理、redis缓存、参数检查、加密、线程池等；
 - 前端：前端采用bootstrap+jQuery框架；
--  _特别说明：因个人技术方向偏后端以及时间精力有限等缘故，导致前端界面部分暂未完成，还请各位童鞋见谅！（当然，也非常欢迎熟悉前端的童鞋一起合作完善前端界面部分！）_ 
 
 ### 项目配置说明
 - 项目配置：config.properties，主要包含数据库配置、文件上传目录配置和redis服务器配置等；
 - 日志配置：log4j.properties，进行日志相关参数配置；
 - 数据初始化：init.sql，创建数据库表及初始数据；
-- 系统首页：http://localhost:8037/admin/index.jsp，初始登录名密码（admin/111）；
+- 系统首页：http://localhost:8037/admin/index.jsp，初始登录名密码（admin/123456）；
 - 本系统使用maven进行构建，web服务器默认使用maven plugin tomcat，详情请查看pom.xml文件；
 
 

@@ -1,4 +1,4 @@
-## amber-insect-maven-ssm-easyUI
+## java-maven-ssm-easyui
 
 ##### 项目简介
 
