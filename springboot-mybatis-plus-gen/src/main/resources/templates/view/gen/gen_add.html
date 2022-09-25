@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FastCoding代码生成器</title>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" th:href="@{/component/layui/css/layui.css}"/>
+    <style>
+        .layui-card {
+            margin: 10px;
+        }
+
+        .layui-card:last-child {
+            margin-bottom: 10px;
+        }
+
+        .layui-card-header {
+            border-bottom: 1px solid #e6e6e6;
+        }
+    </style>
+</head>
+<body class="layui-bg-gray">
+    <form class="layui-form" action="">
+        <!-- 生成信息 -->
+        <div class="layui-row">
+            <!-- 左侧 -->
+            <div class="layui-col-md6">
+                <div class="layui-card">
+                    <div class="layui-card-header">基本信息Ⅰ</div>
+                    <div class="layui-card-body layui-row layui-col-space10">
+                        <div class="layui-col-md12">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">
+                                    包路径 <i class="layui-icon layui-icon-about" lay-tips="生成在哪个包下，例如：com.fast.coding.system"></i>
+                                </label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="packageName" required  lay-verify="required" placeholder="请输入生成包路径" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md12">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">
+                                    模块名称 <i class="layui-icon layui-icon-about" lay-tips="利用模块名来划分功能"></i>
+                                </label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="moduleName" required  lay-verify="required" placeholder="请输入模块名称" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md12">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">
+                                    表前缀 <i class="layui-icon layui-icon-about" lay-tips="输入的表前缀生成过程中将会被移除"></i>
+                                </label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="tablePrefix" required  lay-verify="required" placeholder="请输入表前缀" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧 -->
+            <div class="layui-col-md6">
+                <div class="layui-card">
+                    <div class="layui-card-header">基本信息Ⅱ</div>
+                    <div class="layui-card-body layui-row layui-col-space10">
+                        <div class="layui-col-md12">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">作者</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="author" required  lay-verify="required" placeholder="输入注释作者信息" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md12">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">生成模板</label>
+                                <div class="layui-input-block">
+                                    <select name="template" lay-verify="required">
+                                        <option value="">请选择模板</option>
+                                        <option value="MyBatis-Plus">MyBatis-Plus</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md12">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">生成页面</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="createPage" lay-skin="switch" lay-text="开启|关闭" checked>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 字段列表 -->
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <table id="fieldTable" lay-filter="fieldTable"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="text-align: center;margin-top: 30px;">
+            <div class="layui-input-block">
+                <button type="button" id="execute" class="layui-btn" lay-submit lay-filter="execute">
+                    <i class="layui-icon">&#xe605;</i>提交
+                </button>
+                <button type="button" id="closeDialog" class="layui-btn layui-btn-primary">
+                    <i class="layui-icon">&#x1006;</i>取消
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/html" id="toolBar">
+        <input type="checkbox" class="queryField" lay-skin="primary">
+    </script>
+
+    <!-- js -->
+    <script th:src="@{/component/layui/layui.js}"></script>
+    <script th:src="@{/assets/common/lay-config.js}"></script>
+    <script th:src="@{/assets/modular/gen/gen_add.js}"></script>
+
+</body>
+</html>

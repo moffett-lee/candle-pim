@@ -1,0 +1,13 @@
+/* 数据表格条件搜索表单样式 */
+.layui-input-inline input {
+    height: 30px;
+}
+
+.layui-form-label {
+    width: auto;
+    line-height: 12px;
+}
+
+.layui-form-item {
+    margin-bottom: 0;
+}
