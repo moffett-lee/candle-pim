@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>MyBatis-Plus代码生成器</title>
+    <meta name="author" content="Erwin Feng"/>
+    <meta name="keyword" content="MyBatis-Plus, 代码生成器"/>
+    <meta name="description" content="MyBatis-Plus代码生成器"/>
+
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- icon favicon -->
+    <link href="/static/images/favicon.ico" rel="shortcut icon">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="/static/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/lib/css/normalize.css">
+
+    <link rel="stylesheet" th:href="'/static/css/index.css?v=' + ${version}">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <script th:src="'/static/lib/layui/layui.js?v=' + ${version}"></script>
+
+    <script th:src="'/static/util/Utils.js?v=' + ${version}"></script>
+    <script th:src="'/static/util/Variable.js?v=' + ${version}"></script>
+    <script th:src="'/static/util/LayerUtils.js?v=' + ${version}"></script>
+    <script th:src="'/static/util/AjaxUtils.js?v=' + ${version}"></script>
+    <script th:src="'/static/util/CacheUtils.js?v=' + ${version}"></script>
+    <script th:src="'/static/data/DatabaseConfig.js?v=' + ${version}"></script>
+    <script th:src="'/static/data/DataConfig.js?v=' + ${version}"></script>
+
+    <script th:src="'/static/js/index.js?v=' + ${version}"></script>
+</head>
+<body>
+<section class="home-bg"></section>
+<div class="layui-container">
+
+    <div class="header">
+        <a target="_blank" href="https://fengwenyi.com?fs=mpcg">
+            <img class="logo" src="/static/images/logo.jpg" alt="logo"/>
+        </a>
+        <h1 class="title">MyBatis-Plus代码生成器</h1>
+    </div>
+
+    <!--<div class="layui-progress" style="margin: 15px 0 30px;">
+        <div class="layui-progress-bar" lay-percent="100%"></div>
+    </div>-->
+
+    <form class="layui-form" action="" lay-filter="formFull">
+
+        <div class="main-panel">
+            <div class="main-left-panel">
+
+
+                <blockquote class="layui-elem-quote"><span class="red-star">*</span>项目</blockquote>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red-star">*</span>包名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="packageName" required lay-verify="required" placeholder="请输入包名"
+                               value="com.example.demo" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">实体父类</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="superClassName" placeholder="请输入实体父类的全类名" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+
+                <blockquote class="layui-elem-quote"><span class="red-star">*</span>数据库配置</blockquote>
+
+                <div class="layui-form-item" hidden>
+                    <label class="layui-form-label"><span class="red-star">*</span>数据库类型</label>
+                    <div class="layui-input-block">
+                        <select name="dbTypeName" lay-verify="required">
+                            <option value="mysql">MySQL</option>
+                            <option value="oracle">Oracle</option>
+                            <option value="sqlserver">SQL Server</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item" hidden>
+                    <label class="layui-form-label"><span class="red-star">*</span>数据库地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="host" id="dbAddress" required lay-verify="required" placeholder="ip:port / url"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item" hidden>
+                    <label class="layui-form-label"><span class="red-star">*</span>数据库用户名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="username" id="dbUsername" required lay-verify="required" placeholder="请输入数据库用户名"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item" hidden>
+                    <label class="layui-form-label">数据库密码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="password" id="dbPassword" placeholder="请输入数据库密码" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red-star">*</span>数据库</label>
+                    <div class="layui-input-inline">
+                        <select name="dbConfigName" lay-verify="required" id="dbConfigSelect" lay-filter="selectDbConfig">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <button id="btnEditDatabaseConfig" type="button" class="layui-btn layui-btn-primary layui-border-green">
+                        <i class="layui-icon layui-icon-edit"></i>
+                    </button>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red-star">*</span>数据库名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="dbName" required lay-verify="required" placeholder="请输入数据库名称"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+
+                <blockquote class="layui-elem-quote">可选配置</blockquote>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">作者</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="author" id="author" placeholder="请输入作者"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">输出目录</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="outDir" id="outputDir" placeholder="输出目录" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item panel-submit-btn">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formCodeGenerator">立即生成</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                    <div class="layui-input-block bottom-panel">
+                        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formCodeGeneratorConfigSave">保存配置</button>
+                        <button class="layui-btn layui-btn-danger" type="button" id="formCodeGeneratorConfigDelete">清除配置</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="main-right-panel">
+                <div class="layui-collapse">
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">表配置</h2>
+                        <div class="layui-colla-content layui-show">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">忽略的字段</label>
+                                <div class="layui-input-block">
+                                    <textarea name="ignoreColumns" placeholder="请输入列名，以英文逗号隔开" class="layui-textarea"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">表名</label>
+                                <div class="layui-input-block">
+                                    <textarea name="tableNames" placeholder="请输入表名，以英文逗号隔开" class="layui-textarea"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">表前缀</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="tablePrefixes" placeholder="请输入表前缀，以英文逗号隔开" autocomplete="off"
+                                           class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">字段前缀</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="fieldPrefixes" placeholder="请输入字段前缀，以英文逗号隔开" autocomplete="off"
+                                           class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">排除的表名</label>
+                                <div class="layui-input-block">
+                        <textarea name="excludeTableNames" placeholder="请输入表名，以英文逗号隔开"
+                                  class="layui-textarea"></textarea></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">包名配置</h2>
+                        <div class="layui-colla-content">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">实体类</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="packageEntity" placeholder="请输入实体类包名" value="entity"
+                                           autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">mapper</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="packageMapper" placeholder="请输入Mapper包名" value="dao"
+                                           autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">mappper xml</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="packageMapperXml" placeholder="请输入Mapper XML文件目录名"
+                                           value="mapper" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">service</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="packageService" placeholder="请输入service包名"
+                                           value="repository" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">service.impl</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="packageServiceImpl" placeholder="请输入Service Impl包名"
+                                           value="repository.impl" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">controller</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="packageController" placeholder="请输入Controller包名"
+                                           value="controller" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">文件名格式</h2>
+                        <div class="layui-colla-content">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">实体类</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="fileNamePatternEntity" placeholder="请输入实体类文件名格式"
+                                           value="%sEntity" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">mapper</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="fileNamePatternMapper" placeholder="请输入Mapper文件名格式"
+                                           value="%sDao" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">mappper xml</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="fileNamePatternMapperXml" placeholder="请输入Mapper XML文件名格式"
+                                           value="%sMapper" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">service</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="fileNamePatternService" placeholder="请输入service文件名格式"
+                                           value="%sRepository" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">service.impl</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="fileNamePatternServiceImpl" placeholder="请输入Service Impl包名"
+                                           value="%sRepositoryImpl" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">controller</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="fileNamePatternController" placeholder="请输入Controller包名"
+                                           value="%sController" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">字段名配置</h2>
+                        <div class="layui-colla-content">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">逻辑删除</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="fieldLogicDelete" placeholder="请输入逻辑删除字段名"
+                                           value="delete_state" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">乐观锁</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="fieldVersion" placeholder="请输入乐观锁字段名" value="version"
+                                           autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">实体类配置</h2>
+                        <div class="layui-colla-content">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">是否支持Swagger</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="swaggerSupport" lay-skin="switch" lay-text="开启|关闭"
+                                           value="true">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">JDK版本</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="jdkVersion" value="8-" title="8以前">
+                                    <input type="radio" name="jdkVersion" value="8" title="8" checked>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">是否开启Lombok</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="lombokModel" lay-skin="switch" lay-text="开启|关闭"
+                                           value="true" checked>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">是否开启链式</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="lombokChainModel" lay-skin="switch" lay-text="开启|关闭"
+                                           value="true" checked>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">字段注解</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="fieldAnnotation" lay-skin="switch" lay-text="开启|关闭"
+                                           value="true" checked>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">列常量</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="columnConstant" lay-skin="switch" lay-text="开启|关闭"
+                                           value="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">XML配置</h2>
+                        <div class="layui-colla-content">
+                            <!--<div class="layui-form-item">
+                                <label class="layui-form-label">是否开启二级缓存</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="enableCache" lay-skin="switch" lay-text="开启|关闭"
+                                           value="true">
+                                </div>
+                            </div>-->
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">BaseResultMap</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="baseResultMap" lay-skin="switch" lay-text="开启|关闭"
+                                           value="true">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">BaseColumnList</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="baseColumnList" lay-skin="switch" lay-text="开启|关闭"
+                                           value="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">其他配置</h2>
+                        <div class="layui-colla-content">
+                            <!--<div class="layui-form-item">
+                                <label class="layui-form-label">模板引擎</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="templateEngine" value="velocity" title="velocity" checked>
+                                    <input type="radio" name="templateEngine" value="freemarker" title="freemarker">
+                                    <input type="radio" name="templateEngine" value="beetl" title="beetl">
+                                </div>
+                            </div>-->
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">开启@Mapper</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="mapperAnnotation" lay-skin="switch" lay-text="开启|关闭"
+                                           value="true">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="layer-box">
+        <div class="box-database-config">
+            <form class="layui-form" action="" lay-filter="boxFormDbConfig" id="boxFormDbConfig">
+
+                <div class="layui-form-item">
+                    <div class="layui-input-inline">
+                        <select id="boxDbConfigSelect" lay-filter="boxFormDbConfigSelect">
+                            <option value="">添加新的配置</option>
+                        </select>
+                    </div>
+                    <button class="layui-btn" lay-submit lay-filter="formDatabaseConfigSave">保存</button>
+                    <button class="layui-btn layui-btn-primary" lay-submit lay-filter="boxBtnDbConfigAdd">
+                        <i class="layui-icon layui-icon-addition"></i>
+                    </button>
+                    <button class="layui-btn layui-btn-danger" lay-submit lay-filter="boxBtnDbConfigDelete">
+                        <i class="layui-icon layui-icon-delete"></i>
+                    </button>
+                </div>
+
+                <div class="layui-form-item" hidden>
+                    <div class="layui-input-block">
+                        <input type="text" name="key" required autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red-star">*</span>连接名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" required lay-verify="required" placeholder="添加新的配置"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red-star">*</span>类型</label>
+                    <div class="layui-input-block">
+                        <select name="dbTypeName" lay-verify="required">
+                            <option value="mysql">MySQL</option>
+                            <option value="oracle">Oracle</option>
+                            <option value="sqlserver">SQL Server</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red-star">*</span>地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="host" required lay-verify="required" placeholder="主机名或IP地址"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red-star">*</span>用户名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="username" required lay-verify="required" placeholder="请输入数据库用户名"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="password" placeholder="请输入数据库密码" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="version">v<span th:text="${ version }"></span> <button id="btnUpgrade" type="button" class="layui-btn layui-btn-primary btn-upgrade">检查更新</button></div>
+        <div class="box-links">
+            <a target="_blank" href="https://github.com/fengwenyi/mybatis-plus-code-generator">源码</a>
+        </div>
+        <hr />
+        <div class="box-copyright">
+            Copyright &copy;2022 <a target="_blank" href="https://fengwenyi.com?fs=mpcg">Erwin Feng</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

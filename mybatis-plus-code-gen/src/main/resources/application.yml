@@ -1,0 +1,27 @@
+server:
+  port: 8899
+
+spring:
+  application:
+    name: mybatis-plus-code-gen
+  thymeleaf:
+    enabled: true
+    prefix: classpath:/templates/
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    suffix: .html
+    cache: false
+  mvc:
+    static-path-pattern: /static/**
+
+logging:
+  level:
+    com.fengwenyi: debug
+    com.baomidou: debug
+
+erwin:
+  app:
+    name: @project.artifactId@
+    version: @project.version@
