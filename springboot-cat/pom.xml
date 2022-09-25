@@ -9,10 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>amber-insect-cat-gateway</module>
-        <module>amber-insect-cat-account</module>
-        <module>amber-insect-cat-stock</module>
-        <module>amber-insect-cat-order</module>
+        <module>cat-gateway</module>
+        <module>cat-account</module>
+        <module>cat-stock</module>
+        <module>cat-order</module>
     </modules>
 
     <!-- 自定义属性， 统一管理版本 -->
