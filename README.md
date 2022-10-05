@@ -34,7 +34,7 @@ candle 蜡烛,中文谐译音(可以的了) 寓意为只要肯努力学习，什
 * 羽虱《java-utils》
 * 血虱《springboot-docker》
 * 蓟马《springcloud-sentinel》
-* 蝉
+* 蝉 《springcloud-seata》
 * 角蝉
 * 沫蝉
 * 叶蝉
